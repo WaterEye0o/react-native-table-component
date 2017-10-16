@@ -8,14 +8,14 @@ class Cell extends Component {
     borderStyle: View.propTypes.style,
   }
 
+    static defaultProps ={
+        borderStyle: {borderWidth:1},
+    }
+
   render() {
     const {data, width, height, flex, style, textStyle} = this.props;
     let borderWidth,borderColor;
-    if (this.props.borderStyle && this.props.borderStyle.borderWidth) {
-      borderWidth = this.props.borderStyle.borderWidth;
-    } else {
-      borderWidth = 1;
-    }
+    borderWidth = this.props.borderStyle.borderWidth;
     if (this.props.borderStyle && this.props.borderStyle.borderColor) {
       borderColor = this.props.borderStyle.borderColor;
     } else {
