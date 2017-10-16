@@ -7,6 +7,10 @@ class Table extends Component {
     borderStyle: View.propTypes.style,
   }
 
+    static defaultProps ={
+        borderStyle: {borderWidth:1},
+    }
+
   _renderChildren(props) {
     return React.Children.map(props.children, child => {
       if(props.borderStyle && child.type.displayName !== "ScrollView") {
@@ -21,11 +25,7 @@ class Table extends Component {
 
   render() {
     let borderWidth, borderColor;
-    if (this.props.borderStyle && this.props.borderStyle.borderWidth) {
       borderWidth = this.props.borderStyle.borderWidth;
-    } else {
-      borderWidth = 1;
-    }
     if (this.props.borderStyle && this.props.borderStyle.borderColor) {
       borderColor = this.props.borderStyle.borderColor;
     } else {
